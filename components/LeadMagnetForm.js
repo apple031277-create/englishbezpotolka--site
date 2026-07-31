@@ -5,6 +5,7 @@ import { useState } from "react";
 export default function LeadMagnetForm({ leadMagnetSlug, title, description }) {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState("idle"); // idle | loading | ok | err
+  const [downloadUrl, setDownloadUrl] = useState(null);
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -16,6 +17,8 @@ export default function LeadMagnetForm({ leadMagnetSlug, title, description }) {
         body: JSON.stringify({ email, leadMagnetSlug }),
       });
       if (!res.ok) throw new Error("request failed");
+      const data = await res.json();
+      setDownloadUrl(data.downloadUrl);
       setStatus("ok");
     } catch {
       setStatus("err");
@@ -28,7 +31,11 @@ export default function LeadMagnetForm({ leadMagnetSlug, title, description }) {
       {description && <p>{description}</p>}
       {status === "ok" ? (
         <p className="leadmagnet-status ok">
-          Готово — письмо со ссылкой на гайд уже летит на почту.
+          Готово —{" "}
+          <a href={downloadUrl} target="_blank" rel="noopener noreferrer">
+            скачать гайд (PDF)
+          </a>
+          .
         </p>
       ) : (
         <form className="leadmagnet-row" onSubmit={handleSubmit}>

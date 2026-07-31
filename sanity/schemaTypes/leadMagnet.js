@@ -32,10 +32,10 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: "sendpulseListId",
-      title: "ID списка в SendPulse",
+      name: "mailingListId",
+      title: "ID списка рассылки в Unisender",
       description:
-        "Найти в SendPulse: Рассылки → Список адресов → выбрать список → ID в адресной строке. Подписчики этого гайда попадут именно в этот список.",
+        "Найти в Unisender: Контакты → Списки контактов → выбрать список → ID в адресной строке. Подписчики этого гайда попадут именно в этот список (не обязательно — без него email всё равно сохранится на сайте, просто не уйдёт в Unisender).",
       type: "string",
     }),
   ],
