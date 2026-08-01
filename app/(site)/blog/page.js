@@ -8,6 +8,14 @@ export const metadata = {
   title: "Статьи",
   description:
     "Разборы ошибок, лексика для C1-C2, подготовка к IELTS и Cambridge — статьи «Английский без потолка».",
+  alternates: { canonical: "/blog" },
+  openGraph: {
+    title: "Статьи | Английский без потолка",
+    description:
+      "Разборы ошибок, лексика для C1-C2, подготовка к IELTS и Cambridge — статьи «Английский без потолка».",
+    url: "/blog",
+    type: "website",
+  },
 };
 
 export default async function BlogIndexPage() {
