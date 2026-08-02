@@ -5,7 +5,17 @@ export default async function sitemap() {
   const base = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
   const articles = await client.fetch(allArticleSlugsQuery).catch(() => []);
 
-  const staticRoutes = ["", "/blog"].map((path) => ({
+  const staticRoutes = [
+    "",
+    "/blog",
+    "/exams",
+    "/olympiads",
+    "/reviews",
+    "/level-up",
+    "/workbook",
+    "/bot",
+    "/social",
+  ].map((path) => ({
     url: `${base}${path}`,
     lastModified: new Date(),
   }));

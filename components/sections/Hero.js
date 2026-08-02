@@ -1,5 +1,5 @@
 import Image from "next/image";
-import heroImage from "@/public/images/hero-raspberry.jpg";
+import heroImage from "@/public/images/hero-dog.jpg";
 
 export default function Hero() {
   return (
@@ -16,7 +16,7 @@ export default function Hero() {
               свободно — без зубрёжки, но с системой.
             </p>
             <div className="hero-ctas">
-              <a className="btn btn-primary" href="#workbook">
+              <a className="btn btn-primary" href="/workbook">
                 Воркбук — 590 ₽
               </a>
               <a className="btn btn-ghost" href="https://t.me/englishbezpotolka">
