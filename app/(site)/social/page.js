@@ -14,7 +14,7 @@ const links = [
   { label: "Telegram-канал", href: "https://t.me/englishbezpotolka" },
   { label: "ВКонтакте", href: "https://vk.ru/englishbezpotolka" },
   { label: "Дзен", href: "https://dzen.ru/englishbezpotolka" },
-  { label: "Макс", href: "#" },
+  { label: "Макс", href: "https://max.ru/channel_englishbezpotolka" },
   { label: "Pinterest", href: "#" },
   { label: "VC.ru", href: "#" },
 ];
