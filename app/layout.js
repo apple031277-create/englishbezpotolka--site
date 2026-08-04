@@ -28,6 +28,7 @@ export const metadata = {
   },
   verification: {
     yandex: "2b5e26830ac8b833",
+    google: "UGorHm9u4ogOJb-H0JxZSN1C-bXpg_xtaci-HZKKmTM",
   },
 };
 
