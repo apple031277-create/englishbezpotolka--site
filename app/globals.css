@@ -335,6 +335,58 @@ p:last-child { margin-bottom: 0; }
 .review-shot { border-radius: 12px; overflow: hidden; border: 1px solid var(--line); }
 .review-shot img { width: 100%; display: block; }
 
+/* FAQ accordion */
+.faq-list { max-width: 720px; }
+.faq-item {
+  border-bottom: 1px solid var(--line);
+  padding: 18px 0;
+}
+.faq-item summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--navy);
+  font-size: 16px;
+  list-style: none;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: "+";
+  color: var(--gold);
+  font-size: 20px;
+  flex-shrink: 0;
+}
+.faq-item[open] summary::after { content: "–"; }
+.faq-item p { color: var(--ink-soft); margin-top: 12px; font-size: 15px; }
+
+/* Contact form */
+.contact-form {
+  background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+  padding: 28px; max-width: 480px;
+}
+.contact-form label {
+  display: block; font-size: 13px; font-weight: 600; color: var(--navy);
+  margin: 14px 0 6px;
+}
+.contact-form label:first-of-type { margin-top: 0; }
+.contact-form input, .contact-form textarea {
+  width: 100%; padding: 11px 14px; border-radius: 10px; border: 1px solid var(--line);
+  background: var(--paper); color: var(--ink); font-size: 14px; font-family: inherit;
+  resize: vertical;
+}
+.contact-form .btn { width: 100%; margin-top: 8px; text-align: center; }
+.contact-form .leadmagnet-status { margin-top: 12px; }
+
+.consent-row {
+  display: flex; align-items: flex-start; gap: 8px; margin-top: 14px;
+  font-size: 12.5px; color: var(--ink-soft); cursor: pointer;
+}
+.consent-row input { width: auto; margin-top: 2px; accent-color: var(--navy); flex-shrink: 0; }
+.consent-row a { color: var(--navy); text-decoration: underline; }
+
 /* Footer */
 footer.site-footer { padding: 40px 0 56px; text-align: center; }
 .watermark { font-size: 12px; letter-spacing: 1px; color: var(--ink-soft); }

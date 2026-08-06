@@ -4,6 +4,7 @@ import { useState } from "react";
 
 export default function LeadMagnetForm({ leadMagnetSlug, title, description }) {
   const [email, setEmail] = useState("");
+  const [consent, setConsent] = useState(false);
   const [status, setStatus] = useState("idle"); // idle | loading | ok | err
   const [downloadUrl, setDownloadUrl] = useState(null);
 
@@ -38,17 +39,33 @@ export default function LeadMagnetForm({ leadMagnetSlug, title, description }) {
           .
         </p>
       ) : (
-        <form className="leadmagnet-row" onSubmit={handleSubmit}>
-          <input
-            type="email"
-            required
-            placeholder="Ваш email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <button className="btn btn-primary" type="submit" disabled={status === "loading"}>
-            {status === "loading" ? "Отправляю…" : "Получить гайд"}
-          </button>
+        <form onSubmit={handleSubmit}>
+          <div className="leadmagnet-row">
+            <input
+              type="email"
+              required
+              placeholder="Ваш email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <button className="btn btn-primary" type="submit" disabled={status === "loading"}>
+              {status === "loading" ? "Отправляю…" : "Получить гайд"}
+            </button>
+          </div>
+          <label className="consent-row">
+            <input
+              type="checkbox"
+              required
+              checked={consent}
+              onChange={(e) => setConsent(e.target.checked)}
+            />
+            <span>
+              Согласен(на) на{" "}
+              <a href="/privacy" target="_blank" rel="noopener noreferrer">
+                обработку персональных данных
+              </a>
+            </span>
+          </label>
         </form>
       )}
       {status === "err" && (

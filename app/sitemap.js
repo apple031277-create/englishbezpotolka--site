@@ -15,6 +15,8 @@ export default async function sitemap() {
     "/workbook",
     "/bot",
     "/social",
+    "/faq",
+    "/contact",
   ].map((path) => ({
     url: `${base}${path}`,
     lastModified: new Date(),

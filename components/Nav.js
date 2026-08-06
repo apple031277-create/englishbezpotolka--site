@@ -11,6 +11,7 @@ const links = [
   { href: "/reviews", label: "Отзывы" },
   { href: "/bot", label: "Тест" },
   { href: "/blog", label: "Статьи" },
+  { href: "/faq", label: "Вопросы" },
   { href: "/social", label: "Соцсети" },
 ];
 
@@ -31,6 +32,11 @@ export default function Nav() {
               </Link>
             </li>
           ))}
+          <li>
+            <Link href="/contact" className="nav-cta" onClick={() => setOpen(false)}>
+              Связаться
+            </Link>
+          </li>
         </ul>
         <button
           className="burger"

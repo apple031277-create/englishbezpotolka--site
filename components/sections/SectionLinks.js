@@ -39,6 +39,11 @@ const links = [
     title: "Соцсети",
     text: "Telegram, ВКонтакте, Дзен и другие площадки.",
   },
+  {
+    href: "/faq",
+    title: "Вопросы",
+    text: "Ответы на частые вопросы о занятиях, воркбуке и экзаменах.",
+  },
 ];
 
 export default function SectionLinks() {
