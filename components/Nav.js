@@ -11,6 +11,7 @@ const links = [
   { href: "/reviews", label: "Отзывы" },
   { href: "/bot", label: "Тест" },
   { href: "/blog", label: "Статьи" },
+  { href: "/razbory", label: "Разборы" },
   { href: "/faq", label: "Вопросы" },
   { href: "/social", label: "Соцсети" },
 ];

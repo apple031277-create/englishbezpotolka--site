@@ -1,3 +1,9 @@
+import LeadMagnetForm from "@/components/LeadMagnetForm";
+import { client } from "@/lib/sanity/client";
+import { leadMagnetBySlugQuery } from "@/lib/sanity/queries";
+
+export const revalidate = 60;
+
 export const metadata = {
   title: "Подготовка к олимпиадам",
   description:
@@ -12,7 +18,9 @@ export const metadata = {
   },
 };
 
-export default function OlympiadsPage() {
+export default async function OlympiadsPage() {
+  const leadMagnet = await client.fetch(leadMagnetBySlugQuery, { slug: "apgreid-30-slov" });
+
   return (
     <section>
       <div className="wrap">
@@ -24,7 +32,7 @@ export default function OlympiadsPage() {
             олимпиаде ВШЭ и олимпиаде РАНХиГС по английскому языку.
           </p>
         </div>
-        <div className="article-body">
+        <div className="article-body" style={{ marginBottom: 48 }}>
           <p>
             Олимпиадные задания устроены не так, как школьная программа: тексты
             сложнее и абстрактнее, лексика — на уровне C1-C2 даже там, где формально
@@ -46,6 +54,28 @@ export default function OlympiadsPage() {
             отбор.
           </p>
         </div>
+
+        <div className="testimonial" style={{ marginBottom: 48 }}>
+          <div className="eyebrow">Результат</div>
+          <blockquote>
+            «Когда ко мне пришла эта ученица, ей было 12 лет. Мы шли постепенно:
+            лексика, академический стиль, сложные тексты. В 10 классе решили
+            попробовать олимпиады — полгода целенаправленной подготовки».
+          </blockquote>
+          <cite>— из практики «Английский без потолка»</cite>
+          <div className="result-pills">
+            <span className="result-pill">Победитель олимпиады ВШЭ</span>
+            <span className="result-pill">Призёр олимпиады РАНХиГС</span>
+          </div>
+        </div>
+
+        {leadMagnet && (
+          <LeadMagnetForm
+            leadMagnetSlug={leadMagnet.slug}
+            title={leadMagnet.title}
+            description={leadMagnet.description}
+          />
+        )}
       </div>
     </section>
   );

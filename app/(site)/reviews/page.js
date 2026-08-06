@@ -1,3 +1,6 @@
+import Image from "next/image";
+import ranepaShot from "@/public/images/review-ranepa-olympiad.jpg";
+
 export const metadata = {
   title: "Отзывы",
   description: "Отзывы и результаты учеников «Английский без потолка».",
@@ -32,7 +35,11 @@ export default function ReviewsPage() {
           </div>
         </div>
 
-        <p className="lede">Скриншоты отзывов учеников — скоро здесь.</p>
+        <div className="reviews-grid">
+          <div className="review-shot">
+            <Image src={ranepaShot} alt="Скриншот переписки: результат олимпиады РАНХиГС — призёр, высшая проба" />
+          </div>
+        </div>
       </div>
     </section>
   );

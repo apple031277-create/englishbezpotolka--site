@@ -1,12 +1,13 @@
+import QuizApp from "@/components/QuizApp";
+
 export const metadata = {
   title: "Тест: какой вы ученик английского",
   description:
-    "Пройдите тест из 7 вопросов, подпишитесь на Telegram-канал «Английский без потолка» и получите персональный PDF-разбор.",
+    "Пройдите тест из 7 вопросов прямо на сайте и получите персональный разбор с рекомендациями — без Telegram.",
   alternates: { canonical: "/bot" },
   openGraph: {
     title: "Какой вы ученик английского? | Английский без потолка",
-    description:
-      "Тест из 7 вопросов → подписка на канал → персональный PDF-разбор с рекомендациями.",
+    description: "7 вопросов → личный архетип и рекомендации, прямо на сайте.",
     url: "/bot",
     type: "website",
   },
@@ -25,24 +26,12 @@ export default function BotPage() {
             места.
           </p>
         </div>
-        <div className="quiz-banner">
-          <div>
-            <div className="eyebrow">Как это работает</div>
-            <h2>3 шага до результата</h2>
-            <p>
-              1. Отвечаете на 7 вопросов прямо в Telegram-боте.
-              <br />
-              2. Бот попросит подписаться на канал «Английский без потолка» — это
-              условие получения результата.
-              <br />
-              3. После подписки — жмёте «Проверить» и получаете PDF со своим
-              архетипом и рекомендациями.
-            </p>
-          </div>
-          <a className="btn btn-primary" href="https://t.me/englishbezpotolka_quiz_bot">
-            Пройти тест
-          </a>
-        </div>
+        <QuizApp />
+        <p className="lede" style={{ textAlign: "center", marginTop: 40 }}>
+          Тест есть также в{" "}
+          <a href="https://t.me/englishbezpotolka_quiz_bot">Telegram-боте</a>, если
+          удобнее там.
+        </p>
       </div>
     </section>
   );

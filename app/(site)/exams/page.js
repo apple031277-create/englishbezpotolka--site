@@ -1,4 +1,9 @@
 import ExamsTabs from "@/components/sections/ExamsTabs";
+import LeadMagnetForm from "@/components/LeadMagnetForm";
+import { client } from "@/lib/sanity/client";
+import { leadMagnetBySlugQuery } from "@/lib/sanity/queries";
+
+export const revalidate = 60;
 
 export const metadata = {
   title: "Экзамены",
@@ -14,7 +19,9 @@ export const metadata = {
   },
 };
 
-export default function ExamsPage() {
+export default async function ExamsPage() {
+  const leadMagnet = await client.fetch(leadMagnetBySlugQuery, { slug: "putanitsa-10-par" });
+
   return (
     <section>
       <div className="wrap">
@@ -27,6 +34,13 @@ export default function ExamsPage() {
           </p>
         </div>
         <ExamsTabs />
+        {leadMagnet && (
+          <LeadMagnetForm
+            leadMagnetSlug={leadMagnet.slug}
+            title={leadMagnet.title}
+            description={leadMagnet.description}
+          />
+        )}
       </div>
     </section>
   );

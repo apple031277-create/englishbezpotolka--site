@@ -56,6 +56,12 @@ export default function WorkbookPage() {
             messagePlaceholder="Например: хочу купить воркбук"
             submitLabel="Хочу воркбук"
           />
+          <p className="leadmagnet-note" style={{ textAlign: "center", marginTop: 12 }}>
+            Или сразу в{" "}
+            <a href="https://t.me/englishbezpotolka" target="_blank" rel="noopener noreferrer">
+              Telegram
+            </a>
+          </p>
         </div>
       </div>
     </section>
