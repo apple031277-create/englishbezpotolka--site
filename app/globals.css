@@ -10,6 +10,7 @@
   --gold-soft: #e4c976;
   --line: #ddd4b8;
   --card: #fffdf7;
+  --bad: #b5432f;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -25,17 +26,18 @@
     --gold-soft: #4a3f22;
     --line: #333650;
     --card: #191c27;
+    --bad: #e0836c;
   }
 }
 :root[data-theme="dark"] {
   --paper: #12141c; --paper-alt: #191c27; --navy: #91a3e8; --navy-deep: #c7d1f2;
   --ink: #ece7d8; --ink-soft: #a9a48f; --gold: #e6c15a; --gold-bright: #f0d484;
-  --gold-soft: #4a3f22; --line: #333650; --card: #191c27;
+  --gold-soft: #4a3f22; --line: #333650; --card: #191c27; --bad: #e0836c;
 }
 :root[data-theme="light"] {
   --paper: #f6f3ea; --paper-alt: #eee8d8; --navy: #1a2d6b; --navy-deep: #0e1a40;
   --ink: #2b2a24; --ink-soft: #6b6656; --gold: #a9800c; --gold-bright: #c8a000;
-  --gold-soft: #e4c976; --line: #ddd4b8; --card: #fffdf7;
+  --gold-soft: #e4c976; --line: #ddd4b8; --card: #fffdf7; --bad: #b5432f;
 }
 
 * { box-sizing: border-box; }
@@ -368,6 +370,26 @@ p:last-child { margin-bottom: 0; }
 
 .razbor-body { max-width: 620px; margin: 0 auto; font-size: 16px; }
 .razbor-body p { margin-bottom: 16px; }
+
+.example-bad, .example-good {
+  border-left: 3px solid; padding: 10px 18px; margin: 16px 0; border-radius: 0 8px 8px 0;
+}
+.example-bad { border-color: var(--bad); background: color-mix(in srgb, var(--bad) 10%, var(--paper-alt)); }
+.example-good { border-color: var(--gold-bright); background: var(--gold-soft); }
+.example-bad .tag, .example-good .tag {
+  font-weight: 700; font-size: 12px; letter-spacing: .5px; text-transform: uppercase;
+  display: block; margin-bottom: 4px;
+}
+.example-bad .tag { color: var(--bad); }
+.example-good .tag { color: var(--gold); }
+.example-bad em, .example-good em {
+  font-style: italic; font-family: "Iowan Old Style", Georgia, serif; color: var(--navy);
+}
+.closing-thought {
+  font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif; font-style: italic;
+  font-size: 18px; color: var(--navy); border-left: 3px solid var(--gold-bright);
+  padding-left: 20px; margin: 28px 0 0;
+}
 
 .related-razbory { max-width: 720px; margin: 56px auto 0; }
 .related-razbory h2 { font-size: 18px; margin-bottom: 16px; }

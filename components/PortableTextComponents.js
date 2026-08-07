@@ -23,5 +23,20 @@ export const portableTextComponents = {
         />
       );
     },
+    example: ({ value }) => (
+      <div className={value.kind === "bad" ? "example-bad" : "example-good"}>
+        {value.tag && <span className="tag">{value.tag}</span>}
+        {value.text}
+        {value.translation && (
+          <>
+            {" — "}
+            <em>{value.translation}</em>
+          </>
+        )}
+      </div>
+    ),
+  },
+  block: {
+    closingThought: ({ children }) => <p className="closing-thought">{children}</p>,
   },
 };

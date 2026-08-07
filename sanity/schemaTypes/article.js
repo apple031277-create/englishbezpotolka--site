@@ -36,8 +36,37 @@ export default defineType({
       title: "Текст статьи",
       type: "array",
       of: [
-        { type: "block" },
+        {
+          type: "block",
+          styles: [
+            { title: "Обычный", value: "normal" },
+            { title: "H2", value: "h2" },
+            { title: "H3", value: "h3" },
+            { title: "Цитата", value: "blockquote" },
+            { title: "Закрывающая мысль", value: "closingThought" },
+          ],
+        },
         { type: "image", options: { hotspot: true } },
+        {
+          type: "object",
+          name: "example",
+          title: "Пример ❌/✅",
+          fields: [
+            {
+              name: "kind",
+              title: "Тип",
+              type: "string",
+              options: { list: [{ title: "❌ Плохой", value: "bad" }, { title: "✅ Хороший", value: "good" }] },
+              validation: (Rule) => Rule.required(),
+            },
+            { name: "tag", title: "Подпись (например «B2, плоско»)", type: "string" },
+            { name: "text", title: "Пример на английском", type: "string" },
+            { name: "translation", title: "Перевод (необязательно)", type: "string" },
+          ],
+          preview: {
+            select: { title: "text", subtitle: "kind" },
+          },
+        },
       ],
     }),
     defineField({
