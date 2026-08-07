@@ -7,6 +7,7 @@ const links = [
   { href: "/exams", label: "Экзамены" },
   { href: "/olympiads", label: "Олимпиады" },
   { href: "/level-up", label: "Повышение уровня" },
+  { href: "/format", label: "Формат и цены" },
   { href: "/workbook", label: "Воркбук" },
   { href: "/reviews", label: "Отзывы" },
   { href: "/bot", label: "Тест" },

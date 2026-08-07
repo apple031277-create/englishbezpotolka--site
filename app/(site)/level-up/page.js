@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export const metadata = {
   title: "Повышение уровня",
   description:
@@ -48,6 +50,9 @@ export default function LevelUpPage() {
             </div>
           ))}
         </div>
+        <p className="lede" style={{ textAlign: "center", marginTop: 40 }}>
+          Готовы к индивидуальным занятиям? <Link href="/format">Формат и стоимость →</Link>
+        </p>
       </div>
     </section>
   );

@@ -16,7 +16,7 @@ export default defineType({
       name: "source",
       title: "Откуда заявка",
       type: "string",
-      options: { list: ["workbook", "general"] },
+      options: { list: ["workbook", "format", "general"] },
     }),
     defineField({
       name: "createdAt",

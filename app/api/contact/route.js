@@ -6,7 +6,8 @@ export async function POST(request) {
   const name = body?.name?.trim();
   const contact = body?.contact?.trim();
   const message = body?.message?.trim() || "";
-  const source = body?.source === "workbook" ? "workbook" : "general";
+  const VALID_SOURCES = ["workbook", "format", "general"];
+  const source = VALID_SOURCES.includes(body?.source) ? body.source : "general";
 
   if (!name || !contact) {
     return NextResponse.json({ error: "invalid input" }, { status: 400 });

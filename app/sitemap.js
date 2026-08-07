@@ -14,6 +14,7 @@ export default async function sitemap() {
     "/olympiads",
     "/reviews",
     "/level-up",
+    "/format",
     "/workbook",
     "/bot",
     "/social",
