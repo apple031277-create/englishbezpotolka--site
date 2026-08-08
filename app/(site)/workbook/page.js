@@ -51,6 +51,17 @@ export default function WorkbookPage() {
               Оплата переводом, PDF — сразу после подтверждения
             </div>
           </div>
+          <p className="lede" style={{ fontSize: "0.95rem" }}>
+            Формат: PDF, можно распечатать или заниматься с телефона/планшета.
+            Для уровня B2, кто хочет говорить и писать на уровне C1, без
+            зубрёжки, по системе.
+          </p>
+          <p className="lede" style={{ fontSize: "0.95rem" }}>
+            Доставка электронная: товар цифровой, ссылка на скачивание PDF
+            отправляется на указанный email автоматически, в течение
+            нескольких минут после оплаты. Курьерская или почтовая доставка не
+            требуется.
+          </p>
           <ContactForm
             source="workbook"
             messagePlaceholder="Например: хочу купить воркбук"
@@ -61,6 +72,10 @@ export default function WorkbookPage() {
             <a href="https://t.me/englishbezpotolka" target="_blank" rel="noopener noreferrer">
               Telegram
             </a>
+          </p>
+          <p className="leadmagnet-note" style={{ textAlign: "center", marginTop: 8 }}>
+            Оплачивая, вы соглашаетесь с{" "}
+            <a href="/oferta">публичной офертой</a>
           </p>
         </div>
       </div>
