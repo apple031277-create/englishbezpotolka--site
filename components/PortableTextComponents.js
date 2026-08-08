@@ -39,4 +39,7 @@ export const portableTextComponents = {
   block: {
     closingThought: ({ children }) => <p className="closing-thought">{children}</p>,
   },
+  marks: {
+    highlight: ({ children }) => <span className="text-highlight">{children}</span>,
+  },
 };

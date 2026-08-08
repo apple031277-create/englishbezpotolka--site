@@ -45,6 +45,24 @@ export default defineType({
             { title: "Цитата", value: "blockquote" },
             { title: "Закрывающая мысль", value: "closingThought" },
           ],
+          marks: {
+            decorators: [
+              { title: "Bold", value: "strong" },
+              { title: "Italic", value: "em" },
+              { title: "Code", value: "code" },
+              { title: "Underline", value: "underline" },
+              { title: "Strike", value: "strike-through" },
+              { title: "Акцент (цветом)", value: "highlight" },
+            ],
+            annotations: [
+              {
+                type: "object",
+                name: "link",
+                title: "Ссылка",
+                fields: [{ name: "href", title: "URL", type: "url" }],
+              },
+            ],
+          },
         },
         { type: "image", options: { hotspot: true } },
         {
