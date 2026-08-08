@@ -1,4 +1,4 @@
-import ContactForm from "@/components/ContactForm";
+import WorkbookPurchase from "@/components/WorkbookPurchase";
 
 export const metadata = {
   title: "Воркбук",
@@ -48,7 +48,7 @@ export default function WorkbookPage() {
             <div>10 слов + 7 упражнений на юнит, с ответами для самопроверки</div>
             <div className="wb-price">590 ₽</div>
             <div className="wb-price-note">
-              Оплата переводом, PDF — сразу после подтверждения
+              Оплата картой или через СБП, PDF — сразу после оплаты
             </div>
           </div>
           <p className="lede" style={{ fontSize: "0.95rem" }}>
@@ -58,15 +58,10 @@ export default function WorkbookPage() {
           </p>
           <p className="lede" style={{ fontSize: "0.95rem" }}>
             Доставка электронная: товар цифровой, ссылка на скачивание PDF
-            отправляется на указанный email автоматически, в течение
-            нескольких минут после оплаты. Курьерская или почтовая доставка не
-            требуется.
+            появляется на этой странице сразу после оплаты. Курьерская или
+            почтовая доставка не требуется.
           </p>
-          <ContactForm
-            source="workbook"
-            messagePlaceholder="Например: хочу купить воркбук"
-            submitLabel="Хочу воркбук"
-          />
+          <WorkbookPurchase />
           <p className="leadmagnet-note" style={{ textAlign: "center", marginTop: 12 }}>
             Или сразу в{" "}
             <a href="https://t.me/englishbezpotolka" target="_blank" rel="noopener noreferrer">
